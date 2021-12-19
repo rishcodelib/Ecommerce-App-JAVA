@@ -5,37 +5,36 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.aggarwal.EcommerceApp.Services.ProductService;
+import com.aggarwal.EcommerceApp.Service.IProductService;
 import com.aggarwal.EcommerceApp.entity.Products;
 
-@RestController
+@RestController("/product")
 public class ProductController {
 
 	@Autowired
-	private ProductService ProdServe;
+	private IProductService ProdServe;
 
-	@GetMapping("/products")
+	@GetMapping
 	public List<Products> GetAllProducts() {
 		return ProdServe.getAllProducts();
 	}
 	
-	@PostMapping("/products")
+	@PostMapping
 	public void AddProduct(Products prod) {
-		ProdServe.AddProduct(prod);
+		ProdServe.addProduct(prod);
 		
 	}
-	@PostMapping("/products")
-	public void UpdateProduct(Products prod) {
-		ProdServe.UpdateProduct(prod);;
-		
-	}
-	@PostMapping("/products")
-	public void DeleteProduct(int id) {
-		ProdServe.deleteProduct(id);;
-		
-	}
+//	@PostMapping("/{id}")
+//	public void UpdateProduct(Products prod) {
+//		ProdServe.updateProduct(prod);;
+//		
+//	}
+//	@PostMapping("/{id}")
+//	public void DeleteProduct(@PathVariable("id") int Userid) {
+//		ProdServe.deleteProduct(Userid);;
+//		
+//	}
 	
 }

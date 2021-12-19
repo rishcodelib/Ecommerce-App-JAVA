@@ -1,9 +1,11 @@
 package com.aggarwal.EcommerceApp.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import com.aggarwal.EcommerceApp.entity.Orders;
+import com.aggarwal.EcommerceApp.entity.Order;
 
-public interface OrderRepo extends JpaRepository<Orders, Integer>{
+@Repository
+public interface OrderRepo extends JpaRepository<Order, Integer>{
 
 }

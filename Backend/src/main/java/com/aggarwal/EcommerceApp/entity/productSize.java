@@ -24,7 +24,7 @@ public class productSize {
 	}
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name = "Serial", nullable = true)
 	private int Serial;
 	@Column(name = "Product_id", nullable = true)
@@ -32,6 +32,7 @@ public class productSize {
 	@Column(name = "Size", nullable = true)
 	private String Size;
 	@Column(name = "Quantity", nullable = true)
+
 	private int Quantity;
 
 	public int getSerial() {
