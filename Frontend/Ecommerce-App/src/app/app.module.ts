@@ -9,6 +9,9 @@ import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { CartComponent } from './components/cart/cart.component';
+import { ProductComponent } from './components/product/product.component';
+import { UserComponent } from './components/user/user.component';
+import { OrderComponent } from './components/order/order.component';
 
 
 @NgModule({
@@ -18,7 +21,10 @@ import { CartComponent } from './components/cart/cart.component';
     AboutComponent,
     FooterComponent,
     SigninComponent,
-    CartComponent
+    CartComponent,
+    ProductComponent,
+    UserComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
