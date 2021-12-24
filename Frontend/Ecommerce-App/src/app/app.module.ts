@@ -16,6 +16,7 @@ import { ConfirmComponent } from './components/confirm/confirm.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ErrorComponent } from './components/error/error.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ErrorComponent } from './components/error/error.component';
     ConfirmComponent,
     CheckoutComponent,
     ProductDetailComponent,
-    ErrorComponent
+    ErrorComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
