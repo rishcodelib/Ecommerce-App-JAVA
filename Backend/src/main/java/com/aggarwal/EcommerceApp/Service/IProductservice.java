@@ -2,15 +2,15 @@ package com.aggarwal.EcommerceApp.Service;
 
 import java.util.List;
 
-import com.aggarwal.EcommerceApp.entity.Products;
+import com.aggarwal.EcommerceApp.entity.Product;
 
-public interface IProductService {
+public interface IProductservice {
 
-	public List<Products> getAllProducts();
+	public List<Product> getAllProduct();
 	
-	public void addProduct(Products prod);
+	public void addProduct(Product prod);
 	
-	public void updateProduct(Products prod);
+	public void updateProduct(Product prod);
 	
 	public void deleteProduct(int id);
 }

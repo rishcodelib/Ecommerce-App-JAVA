@@ -2,15 +2,17 @@ package com.aggarwal.EcommerceApp.Service;
 
 import java.util.List;
 
-import com.aggarwal.EcommerceApp.entity.Orders;
+import com.aggarwal.EcommerceApp.entity.Order;
 
-public interface IOrderService {
+
+
+public interface IOrderservice {
 	
-	public List<Orders> getAllOrders();
+	public List<Order> getAllOrder();
 	
-	public String addOrder(Orders Order);
+	public String addOrder(Order Order);
 	
-	public void updateOrder(Orders Order);
+	public void updateOrder(Order Order);
 	
 	public void deleteOrder(int OrderId);
 

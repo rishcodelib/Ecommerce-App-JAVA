@@ -12,8 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.aggarwal.EcommerceApp.Service.IUserService;
-import com.aggarwal.EcommerceApp.Service.UserService;
-import com.aggarwal.EcommerceApp.entity.Users;
+import com.aggarwal.EcommerceApp.entity.User;
 
 @RestController
 public class UserController {
@@ -22,12 +21,12 @@ public class UserController {
 	private IUserService myuser;
 
 	@GetMapping("/user")
-	public List<Users> GetAllUsers() {
-		return myuser.getAllUsers();
+	public List<User> GetAllUsers() {
+		return myuser.getAllUser();
 	}
 
 	@PostMapping("/user")
-	public void AddUser(@PathVariable("user")Users user) {
+	public void AddUser(@PathVariable("user")User user) {
 		myuser.addUser(user);
 		
 	}
@@ -39,7 +38,7 @@ public class UserController {
 	}
 
 	@PutMapping("/{id}")
-	public void UpdateUser(@RequestBody Users user) {
+	public void UpdateUser(@RequestBody User user) {
 		myuser.updateUser(user);
 	}
 

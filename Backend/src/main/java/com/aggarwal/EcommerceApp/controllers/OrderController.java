@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.aggarwal.EcommerceApp.Service.IOrderService;
+import com.aggarwal.EcommerceApp.Service.IOrderservice;
 import com.aggarwal.EcommerceApp.Service.OrderService;
 import com.aggarwal.EcommerceApp.entity.Order;
 
@@ -16,17 +16,17 @@ import com.aggarwal.EcommerceApp.entity.Order;
 public class OrderController {
 	
 	@Autowired
-	private IOrderService OServe;
+	private IOrderservice OServe;
 	
-//	@RequestMapping("/order")
-//	public List<Order> GetAllOrders() {
-//		return OServe.getAllOrder();
-//	}
+	@RequestMapping("/order")
+	public List<Order> GetAllOrders() {
+		return OServe.getAllOrder();
+	}
 	
-//	@PostMapping("/order")
-//	public void AddProduct(Orders Order) {
-//		OServe.addOrder(Order);
-//		
-//	}
+	@PostMapping("/order")
+	public void AddProduct(Order Order) {
+		OServe.addOrder(Order);
+		
+	}
 
 }

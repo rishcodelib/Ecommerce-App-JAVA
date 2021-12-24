@@ -10,33 +10,35 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.aggarwal.EcommerceApp.Repository.UserRepository;
-import com.aggarwal.EcommerceApp.entity.Users;
+import com.aggarwal.EcommerceApp.entity.User;
 
 @Service
-public class UserService implements IUserService {
+public class Userservice implements IUserService {
 
 	@Autowired
 	private UserRepository Urepo;
 
-	public List<Users> getAllUsers() {
-		List<Users> users = new ArrayList<>();
-		Urepo.findAll().forEach(users::add);
-		return users;
+	public List<User> getAllUser() {
+		List<User> User = new ArrayList<>();
+		Urepo.findAll().forEach(User::add);
+		return User;
 
 	}
 
-	public String addUser(Users user) {
+	public String addUser(User user) {
 			Urepo.save(user);
 			return "user Added Success";
 	}
 
-	public void updateUser(Users user) {
+	public void updateUser(User user) {
 		Urepo.save(user);
 	}
 
 	public void deleteUser(int UserId) {
 		Urepo.deleteById(UserId);
 	}
+
+	
 
 	
 }

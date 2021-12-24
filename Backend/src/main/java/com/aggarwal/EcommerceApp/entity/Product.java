@@ -8,13 +8,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Products")
-public class Products {
+@Table(name = "Product")
+public class Product {
 
-	public Products() {
+	public Product() {
 	}
 
-	public Products(int userId, int productid, String name, String description, String image, String imagePath,
+	public Product(int userId, int productid, String name, String description, String image, String imagePath,
 			int price, Boolean inStock) {
 		this.userId = userId;
 		this.productid = productid;

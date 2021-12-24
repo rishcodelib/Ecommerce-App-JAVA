@@ -7,31 +7,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.aggarwal.EcommerceApp.Repository.OrderRepo;
-import com.aggarwal.EcommerceApp.entity.Orders;
+import com.aggarwal.EcommerceApp.entity.Order;
 
 @Service
-public class OrderService implements IOrderService {
+public class OrderService implements IOrderservice {
 
 	@Autowired
 	private OrderRepo Orepo;
-	
-	public List<Orders> getAllOrders() {
-		List<Orders> orders = new ArrayList<>();
+
+	public List<Order> getAllOrder() {
+		List<Order> orders = new ArrayList<>();
 		Orepo.findAll().forEach(orders::add);
 		return orders;
 
 	}
 
-	public String addOrder(Orders Order) {
-			Orepo.save(Order);
-			return "Order Added Success";
+	public String addOrder(Order Order) {
+		Orepo.save(Order);
+		return "Order Added Success";
 	}
 
-	public void updateOrder(Orders Order) {
+	public void updateOrder(Order Order) {
 		Orepo.save(Order);
 	}
 
 	public void deleteOrder(int OrderId) {
 		Orepo.deleteById(OrderId);
 	}
+
 }

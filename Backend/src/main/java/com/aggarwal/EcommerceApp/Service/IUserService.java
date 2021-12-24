@@ -2,16 +2,16 @@ package com.aggarwal.EcommerceApp.Service;
 
 import java.util.List;
 
-import com.aggarwal.EcommerceApp.entity.Users;
+import com.aggarwal.EcommerceApp.entity.User;
 
 public interface IUserService {
 	
 
-	public List<Users> getAllUsers();
+	public List<User> getAllUser();
 	
-	public String addUser(Users user);
+	public String addUser(User user);
 	
-	public void updateUser(Users user);
+	public void updateUser(User user);
 
 	public void deleteUser(int UserId);
 }
