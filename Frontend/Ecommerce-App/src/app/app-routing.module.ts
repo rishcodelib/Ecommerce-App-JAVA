@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CartComponent } from './components/cart/cart.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { ConfirmComponent } from './components/confirm/confirm.component';
 import { HomeComponent } from './components/home/home.component';
 import { OrderComponent } from './components/order/order.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ProductComponent } from './components/product/product.component';
 import { UserComponent } from './components/user/user.component';
 
@@ -32,6 +35,18 @@ const routes: Routes = [
     path: 'orders',
     component: OrderComponent,
   },
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
+  },
+  {
+    path: 'confirm',
+    component: ConfirmComponent,
+  },
+  {
+    path: 'product-detail',
+    component: ProductDetailComponent
+  }
 ];
 
 @NgModule({

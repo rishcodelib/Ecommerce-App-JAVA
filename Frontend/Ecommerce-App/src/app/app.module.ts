@@ -12,6 +12,10 @@ import { CartComponent } from './components/cart/cart.component';
 import { ProductComponent } from './components/product/product.component';
 import { UserComponent } from './components/user/user.component';
 import { OrderComponent } from './components/order/order.component';
+import { ConfirmComponent } from './components/confirm/confirm.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ErrorComponent } from './components/error/error.component';
 
 
 @NgModule({
@@ -24,7 +28,11 @@ import { OrderComponent } from './components/order/order.component';
     CartComponent,
     ProductComponent,
     UserComponent,
-    OrderComponent
+    OrderComponent,
+    ConfirmComponent,
+    CheckoutComponent,
+    ProductDetailComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
