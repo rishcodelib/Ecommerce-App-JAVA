@@ -22,20 +22,20 @@ public class ProductController {
 		return ProdServe.getAllProduct();
 	}
 	
-	@PostMapping
-	public void AddProduct(Product prod) {
-		ProdServe.addProduct(prod);
-		
-	}
-	@PostMapping("/{id}")
-	public void UpdateProduct(Product prod) {
-		ProdServe.updateProduct(prod);;
-		
-	}
-	@PostMapping("/{id}")
-	public void DeleteProduct(@PathVariable("id") int Userid) {
-		ProdServe.deleteProduct(Userid);;
-		
-	}
+//	@PostMapping
+//	public void AddProduct(Product prod) {
+//		ProdServe.addProduct(prod);
+//		
+//	}
+//	@PostMapping("/{id}")
+//	public void UpdateProduct(Product prod) {
+//		ProdServe.updateProduct(prod);;
+//		
+//	}
+//	@PostMapping("/{id}")
+//	public void DeleteProduct(@PathVariable("id") int Userid) {
+//		ProdServe.deleteProduct(Userid);;
+//		
+//	}
 	
 }
