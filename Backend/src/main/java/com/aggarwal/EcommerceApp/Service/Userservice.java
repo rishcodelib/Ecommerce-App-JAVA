@@ -5,10 +5,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.aggarwal.EcommerceApp.Repository.UserRepository;
 import com.aggarwal.EcommerceApp.entity.User;
 
@@ -18,6 +14,9 @@ public class Userservice implements IUserService {
 	@Autowired
 	private UserRepository Urepo;
 
+//	@Autowired
+//	private User users;
+
 	public List<User> getAllUser() {
 		List<User> User = new ArrayList<>();
 		Urepo.findAll().forEach(User::add);
@@ -26,8 +25,8 @@ public class Userservice implements IUserService {
 	}
 
 	public String addUser(User user) {
-			Urepo.save(user);
-			return "user Added Success";
+		Urepo.save(user);
+		return "user Added Success";
 	}
 
 	public void updateUser(User user) {
@@ -38,7 +37,11 @@ public class Userservice implements IUserService {
 		Urepo.deleteById(UserId);
 	}
 
-	
+//	public boolean login(String email, String password) {
+//		if (users.getEmail().equals(email) && users.getPassword().equals(password)) {
+//			return true;
+//		}
+//	return false;
+//	}
 
-	
 }
