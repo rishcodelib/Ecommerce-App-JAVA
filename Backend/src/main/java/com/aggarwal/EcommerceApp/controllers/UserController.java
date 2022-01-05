@@ -26,18 +26,18 @@ public class UserController {
 	}
 
 	@PostMapping("/user")
-	public void AddUser(@PathVariable("user")User user) {
+	public void AddUser(@PathVariable("user") User user) {
 		myuser.addUser(user);
 		
 	}
 
-	@PostMapping("/{id}")
+	@PostMapping("user/{id}")
 	public void DeleteUser(@PathVariable("id") int UserId) {
 		myuser.deleteUser(UserId);
 
 	}
 
-	@PutMapping("/{id}")
+	@PutMapping("user/{id}")
 	public void UpdateUser(@RequestBody User user) {
 		myuser.updateUser(user);
 	}
