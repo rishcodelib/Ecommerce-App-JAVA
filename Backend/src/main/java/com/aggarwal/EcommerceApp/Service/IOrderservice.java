@@ -10,10 +10,11 @@ public interface IOrderservice {
 	
 	public List<Order> getAllOrder();
 	
-	public String addOrder(Order Order);
-	
-	public void updateOrder(Order Order);
+	public void addOrder(Order Order);
 	
 	public void deleteOrder(int OrderId);
+
+	Order updateOrder(int orderId, Order order);
+
 
 }

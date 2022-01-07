@@ -8,30 +8,23 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "productSize")
-public class productSize {
+@Table(name = "productStore")
+public class ProductStore {
 
-	public productSize(int serial, int productid, String size, int quantity) {
-		Serial = serial;
-		this.productid = productid;
-		Size = size;
-		Quantity = quantity;
-	}
 
-	public productSize() {
-
-	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name = "Serial", nullable = true)
 	private int Serial;
+
 	@Column(name = "Product_id", nullable = true)
 	private int productid;
+	
 	@Column(name = "Size", nullable = true)
 	private String Size;
+	
 	@Column(name = "Quantity", nullable = true)
-
 	private int Quantity;
 
 	public int getSerial() {
@@ -65,5 +58,7 @@ public class productSize {
 	public void setQuantity(int quantity) {
 		Quantity = quantity;
 	}
+
+	
 
 }

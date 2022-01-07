@@ -62,7 +62,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finalName>EcommerceBackend</finalName>
+	
 	</build>
 
 </project>

@@ -8,27 +8,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Product")
+@Table(name = "product")
 public class Product {
 
-	public Product() {
-	}
-
-	public Product(int userId, int productid, String name, String description, String image, String imagePath,
-			int price, Boolean inStock) {
-		this.userId = userId;
-		this.productid = productid;
-		this.name = name;
-		Description = description;
-		this.image = image;
-		ImagePath = imagePath;
-		this.price = price;
-		this.inStock = inStock;
-	}
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@Column(name = "Prod_Id", nullable = true)
 	private int productid;
 	
 	@Column(name = "User_id", nullable = true)
@@ -38,18 +23,84 @@ public class Product {
 	private String name;
 	
 	@Column(name = "Prod_Desc", nullable = true)
-	private String Description;
+	private String description;
 	
 	@Column(name = "Prod_image", nullable = true)
 	private String image;
 	
 	@Column(name = "Prod_ImgPath", nullable = true)
-	private String ImagePath;
+	private String imagePath;
 	
 	@Column(name = "Price", nullable = true)
 	private long price;
 	
 	@Column(name = "InStock", nullable = true)
 	private Boolean inStock;
+
+	public int getProductid() {
+		return productid;
+	}
+
+	public void setProductid(int productid) {
+		this.productid = productid;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public String getImagePath() {
+		return imagePath;
+	}
+
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
+
+	public long getPrice() {
+		return price;
+	}
+
+	public void setPrice(long price) {
+		this.price = price;
+	}
+
+	public Boolean getInStock() {
+		return inStock;
+	}
+
+	public void setInStock(Boolean inStock) {
+		this.inStock = inStock;
+	}
+	
+	
 
 }

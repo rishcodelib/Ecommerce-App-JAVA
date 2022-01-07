@@ -2,6 +2,7 @@ package com.aggarwal.EcommerceApp.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -22,6 +23,7 @@ public class Productservice implements IProductservice {
 		return prod;
 	}
 
+
 	public void addProduct(Product Prod) {
 		Prepo.save(Prod);
 	}
@@ -32,7 +34,19 @@ public class Productservice implements IProductservice {
 
 	public void deleteProduct(int id) {
 		Prepo.deleteById(id);
-		;
+		
+	}
+
+
+	@Override
+	public Product getProduct(int productId) {
+		 if(Prepo.existsById(productId)) {
+			 return Prepo.findById(productId).get();
+		 }
+		return null;
+		
+		 // TODO Auto-generated method stub
+	
 	}
 
 }

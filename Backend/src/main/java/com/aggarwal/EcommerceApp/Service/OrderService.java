@@ -22,9 +22,8 @@ public class OrderService implements IOrderservice {
 
 	}
 
-	public String addOrder(Order Order) {
+	public void addOrder(Order Order) {
 		Orepo.save(Order);
-		return "Order Added Success";
 	}
 
 	public void updateOrder(Order Order) {
@@ -33,6 +32,16 @@ public class OrderService implements IOrderservice {
 
 	public void deleteOrder(int OrderId) {
 		Orepo.deleteById(OrderId);
+	}
+
+	@Override
+	public Order updateOrder(int orderId, Order order) {
+		if (Orepo.existsById(orderId)) {
+			Orepo.save(order);
+		}
+		return null;
+		// TODO Auto-generated method stub
+
 	}
 
 }

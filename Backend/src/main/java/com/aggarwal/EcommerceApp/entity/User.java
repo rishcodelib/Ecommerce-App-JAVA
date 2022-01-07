@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "user")
 public class User {
-		
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int UserId;
@@ -42,9 +42,6 @@ public class User {
 	@Column(name = "role", nullable = true)
 	private int role;
 
-	
-	
-	
 	public int getUserId() {
 		return UserId;
 	}
@@ -124,10 +121,5 @@ public class User {
 	public void setRole(int role) {
 		this.role = role;
 	}
-	
-	
-	
-	
-	
 
 }
