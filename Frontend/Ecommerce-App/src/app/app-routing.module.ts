@@ -8,6 +8,7 @@ import { OrderComponent } from './components/order/order.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ProductComponent } from './components/product/product.component';
 import { RegisterComponent } from './components/register/register.component';
+import { SigninComponent } from './components/signin/signin.component';
 import { UserComponent } from './components/user/user.component';
 
 const routes: Routes = [
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'login',
+    component: SigninComponent
   }
 ];
 
