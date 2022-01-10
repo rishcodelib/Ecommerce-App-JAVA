@@ -9,11 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.UniqueConstraint;
-
 import org.hibernate.annotations.CreationTimestamp;
-
-import com.sun.istack.NotNull;
 
 @Entity
 public class CustomerDetail {

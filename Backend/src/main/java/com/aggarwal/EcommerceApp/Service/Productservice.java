@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.aggarwal.EcommerceApp.Repository.ProductImageRepository;
 import com.aggarwal.EcommerceApp.Repository.ProductRepo;
 import com.aggarwal.EcommerceApp.entity.Product;
+
+import javassist.scopedpool.ScopedClassPoolRepositoryImpl;
 
 import org.springframework.stereotype.Service;
 
@@ -21,9 +24,10 @@ public class Productservice implements IProductservice {
 		return prod;
 	}
 
-
 	public void addProduct(Product Prod) {
+		Prod.setProductId(Prod.getProductid());
 		Prepo.save(Prod);
+		
 	}
 
 	public void updateProduct(Product prod) {
@@ -32,19 +36,18 @@ public class Productservice implements IProductservice {
 
 	public void deleteProduct(int id) {
 		Prepo.deleteById(id);
-		
-	}
 
+	}
 
 	@Override
 	public Product getProduct(int productId) {
-		 if(Prepo.existsById(productId)) {
-			 return Prepo.findById(productId).get();
-		 }
+		if (Prepo.existsById(productId)) {
+			return Prepo.findById(productId).get();
+		}
 		return null;
-		
-		 // TODO Auto-generated method stub
-	
+
+		// TODO Auto-generated method stub
+
 	}
 
 }

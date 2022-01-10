@@ -25,7 +25,7 @@ public class Product {
 	private int productId;
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "userId")
+	@JoinColumn(name = "User_id")
 	private User userId;
 
 	@Column(name = "prodName", nullable = true)
@@ -34,8 +34,13 @@ public class Product {
 	@Column(name = "prodDesc", nullable = true)
 	private String description;
 
-	@OneToMany(mappedBy = "productId" ,cascade = CascadeType.ALL)
+	@OneToMany(targetEntity = ProductImage.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "ProductImage_id")
 	private List<ProductImage> productImages;
+
+	@OneToMany(targetEntity = ProductStore.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "Productstore_id")
+	private List<ProductStore> productstore;
 
 	@Column(name = "price", nullable = true)
 	private long price;
@@ -48,15 +53,24 @@ public class Product {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Product(Timestamp timestamp, int productid, User user, String name, String description,
-			List<ProductImage> productImage, long price, Boolean inStock) {
+	public List<ProductStore> getProductsize() {
+		return productstore;
+	}
+
+	public void setProductsize(List<ProductStore> productstore) {
+		this.productstore = productstore;
+	}
+
+	public Product(Timestamp timestamp, int productId, User userId, String name, String description,
+			List<ProductImage> productImages, List<ProductStore> productstore, long price, Boolean inStock) {
 		super();
 		this.timestamp = timestamp;
-		this.productId = productid;
-		this.userId = user;
+		this.productId = productId;
+		this.userId = userId;
 		this.name = name;
 		this.description = description;
-		this.productImages = productImage;
+		this.productImages = productImages;
+		this.productstore = productstore;
 		this.price = price;
 		this.inStock = inStock;
 	}

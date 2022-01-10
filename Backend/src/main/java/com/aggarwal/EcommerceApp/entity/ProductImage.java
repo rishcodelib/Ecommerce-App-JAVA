@@ -1,6 +1,8 @@
 package com.aggarwal.EcommerceApp.entity;
 
 import java.sql.Timestamp;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,11 +21,7 @@ public class ProductImage {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int serial;
-
-	@ManyToOne
-	@JoinColumn(name = "productId")
-	private Product productId;
+	private int imageId;
 
 	@Column(name = "prodImage", nullable = true)
 	private String image;
@@ -33,6 +31,16 @@ public class ProductImage {
 
 	@Column(nullable = true)
 	private String imageExtn;
+
+
+
+	public int getImageId() {
+		return imageId;
+	}
+
+	public void setImageId(int imageId) {
+		this.imageId = imageId;
+	}
 
 	public ProductImage() {
 		super();
@@ -45,33 +53,6 @@ public class ProductImage {
 
 	public void setTimestamp(Timestamp timestamp) {
 		this.timestamp = timestamp;
-	}
-
-	public ProductImage(Timestamp timestamp, int serial, Product productId, String image, String imagePath,
-			String imageExtn) {
-		super();
-		this.timestamp = timestamp;
-		this.serial = serial;
-		this.productId = productId;
-		this.image = image;
-		this.imagePath = imagePath;
-		this.imageExtn = imageExtn;
-	}
-
-	public int getSerial() {
-		return serial;
-	}
-
-	public void setSerial(int serial) {
-		this.serial = serial;
-	}
-
-	public Product getProductId() {
-		return productId;
-	}
-
-	public void setProductId(Product productId) {
-		this.productId = productId;
 	}
 
 	public String getImage() {
@@ -97,5 +78,15 @@ public class ProductImage {
 	public void setImageExtn(String imageExtn) {
 		this.imageExtn = imageExtn;
 	}
+
+	public ProductImage(Timestamp timestamp, int imageId, String image, String imagePath, String imageExtn) {
+		super();
+		this.timestamp = timestamp;
+		this.imageId = imageId;
+		this.image = image;
+		this.imagePath = imagePath;
+		this.imageExtn = imageExtn;
+	}
+
 
 }
