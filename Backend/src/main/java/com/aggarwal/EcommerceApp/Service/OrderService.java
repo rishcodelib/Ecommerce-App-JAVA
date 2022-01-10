@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.aggarwal.EcommerceApp.Repository.OrderRepo;
-import com.aggarwal.EcommerceApp.entity.Order;
+import com.aggarwal.EcommerceApp.entity.OrderDetail;
 
 @Service
 public class OrderService implements IOrderservice {
@@ -15,18 +15,18 @@ public class OrderService implements IOrderservice {
 	@Autowired
 	private OrderRepo Orepo;
 
-	public List<Order> getAllOrder() {
-		List<Order> orders = new ArrayList<>();
+	public List<OrderDetail> getAllOrderDetails() {
+		List<OrderDetail> orders = new ArrayList<>();
 		Orepo.findAll().forEach(orders::add);
 		return orders;
 
 	}
 
-	public void addOrder(Order Order) {
+	public void addOrder(OrderDetail Order) {
 		Orepo.save(Order);
 	}
 
-	public void updateOrder(Order Order) {
+	public void updateOrder(OrderDetail Order) {
 		Orepo.save(Order);
 	}
 
@@ -35,13 +35,19 @@ public class OrderService implements IOrderservice {
 	}
 
 	@Override
-	public Order updateOrder(int orderId, Order order) {
-		if (Orepo.existsById(orderId)) {
-			Orepo.save(order);
-		}
-		return null;
+	public List<OrderDetail> getAllOrder() {
 		// TODO Auto-generated method stub
-
+		return null;
 	}
+
+	@Override
+	public void updateOrder(int orderId, OrderDetail order) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	
 
 }

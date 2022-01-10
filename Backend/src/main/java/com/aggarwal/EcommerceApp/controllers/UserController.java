@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,16 +27,23 @@ public class UserController {
 	public List<User> GetAllUsers() {
 		return myuser.getAllUser();
 	}
+	
+	@GetMapping("/user/{id}")
+	public User getUser(@RequestParam("userId") int userId) {
+		System.out.println(userId);
+		return myuser.getUser(userId);
+	}
+	
 
-	@PostMapping("/user/login")
-	public void login(@PathVariable("email") String email, String password) {
-		IUserService.login(email, password);
+	@PostMapping("/user/signin")
+	public Boolean signin(@RequestParam("email") String email, @RequestParam("password") String password) {
+		return myuser.login(email, password);
 
 	}
 
 	@PostMapping("/user")
 	@ResponseBody
-	public void AddUser(User user) {
+	public void addUser(User user) {
 		try {
 			myuser.addUser(user);
 		} catch (DataIntegrityViolationException e) {
@@ -45,7 +53,7 @@ public class UserController {
 	}
 
 	@PostMapping("user/{id}")
-	public void DeleteUser(@PathVariable("id") int UserId) {
+	public void deleteUser(@PathVariable("id") int UserId) {
 		try {
 
 			myuser.deleteUser(UserId);
@@ -58,7 +66,7 @@ public class UserController {
 	}
 
 	@PutMapping("user/{id}")
-	public void UpdateUser(@RequestBody User user) {
+	public void updateUser(@RequestBody User user) {
 		myuser.updateUser(user);
 	}
 

@@ -14,8 +14,7 @@ public interface IUserService {
 
 	public void deleteUser(int UserId);
 
-	public static boolean login(String email, String password) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	public boolean login(String email, String password) ;
+
+	public User getUser(int userId);
 }

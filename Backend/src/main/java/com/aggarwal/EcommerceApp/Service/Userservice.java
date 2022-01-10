@@ -2,6 +2,7 @@ package com.aggarwal.EcommerceApp.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,9 +15,6 @@ public class Userservice implements IUserService {
 	@Autowired
 	private UserRepository Urepo;
 
-//	@Autowired
-//	private User users;
-
 	public List<User> getAllUser() {
 		List<User> User = new ArrayList<>();
 		Urepo.findAll().forEach(User::add);
@@ -25,23 +23,51 @@ public class Userservice implements IUserService {
 	}
 
 	public String addUser(User user) {
-		Urepo.save(user);
-		return "user Added Success";
+		try {
+			Urepo.save(user);
+			return "user Added Success";
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "Failed ";
 	}
 
 	public void updateUser(User user) {
-		Urepo.save(user);
+		try {
+			Urepo.save(user);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void deleteUser(int UserId) {
-		Urepo.deleteById(UserId);
+		try {
+			Urepo.deleteById(UserId);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
-//	public boolean login(String email, String password) {
-//		if (users.getEmail().equals(email) && users.getPassword().equals(password)) {
-//			return true;
-//		}
-//	return false;
-//	}
+	public boolean login(String email, String password) {
+
+		try {
+			return Urepo.existsByEmail(email);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+
+	}
+
+	@Override
+	public User getUser(int userId) {
+
+		return Urepo.findById(userId).get();
+
+	}
 
 }

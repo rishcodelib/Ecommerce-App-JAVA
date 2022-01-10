@@ -1,7 +1,5 @@
 package com.aggarwal.EcommerceApp.Service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.aggarwal.EcommerceApp.Repository.ProductStoreRepo;

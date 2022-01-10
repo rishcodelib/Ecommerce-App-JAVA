@@ -1,56 +1,112 @@
 package com.aggarwal.EcommerceApp.entity;
 
+import java.sql.Timestamp;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
-@Table(name = "product")
 public class Product {
 
-	
+	@CreationTimestamp
+	private Timestamp timestamp;
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private int productid;
-	
-	@Column(name = "User_id", nullable = true)
-	private int userId;
-	
-	@Column(name = "Prod_name", nullable = true)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int productId;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "userId")
+	private User userId;
+
+	@Column(name = "prodName", nullable = true)
 	private String name;
-	
-	@Column(name = "Prod_Desc", nullable = true)
+
+	@Column(name = "prodDesc", nullable = true)
 	private String description;
-	
-	@Column(name = "Prod_image", nullable = true)
-	private String image;
-	
-	@Column(name = "Prod_ImgPath", nullable = true)
-	private String imagePath;
-	
-	@Column(name = "Price", nullable = true)
+
+	@OneToMany(mappedBy = "productId" ,cascade = CascadeType.ALL)
+	private List<ProductImage> productImages;
+
+	@Column(name = "price", nullable = true)
 	private long price;
-	
-	@Column(name = "InStock", nullable = true)
+
+	@Column(name = "inStock", nullable = true)
 	private Boolean inStock;
 
-	public int getProductid() {
-		return productid;
+	public Product() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	public void setProductid(int productid) {
-		this.productid = productid;
+	public Product(Timestamp timestamp, int productid, User user, String name, String description,
+			List<ProductImage> productImage, long price, Boolean inStock) {
+		super();
+		this.timestamp = timestamp;
+		this.productId = productid;
+		this.userId = user;
+		this.name = name;
+		this.description = description;
+		this.productImages = productImage;
+		this.price = price;
+		this.inStock = inStock;
 	}
 
-	public int getUserId() {
+	public int getProductId() {
+		return productId;
+	}
+
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+
+	public User getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(User userId) {
 		this.userId = userId;
+	}
+
+	public List<ProductImage> getProductImages() {
+		return productImages;
+	}
+
+	public void setProductImages(List<ProductImage> productImages) {
+		this.productImages = productImages;
+	}
+
+	public int getProductid() {
+		return productId;
+	}
+
+	public void setProductid(int productid) {
+		this.productId = productid;
+	}
+
+	public Timestamp getTimestamp() {
+		return timestamp;
+	}
+
+	public void setTimestamp(Timestamp timestamp) {
+		this.timestamp = timestamp;
+	}
+
+	public User getUser() {
+		return userId;
+	}
+
+	public void setUser(User user) {
+		this.userId = user;
 	}
 
 	public String getName() {
@@ -69,22 +125,6 @@ public class Product {
 		this.description = description;
 	}
 
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
-	}
-
-	public String getImagePath() {
-		return imagePath;
-	}
-
-	public void setImagePath(String imagePath) {
-		this.imagePath = imagePath;
-	}
-
 	public long getPrice() {
 		return price;
 	}
@@ -100,7 +140,5 @@ public class Product {
 	public void setInStock(Boolean inStock) {
 		this.inStock = inStock;
 	}
-	
-	
 
 }

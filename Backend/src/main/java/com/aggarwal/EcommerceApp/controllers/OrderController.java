@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.aggarwal.EcommerceApp.Service.IOrderservice;
-import com.aggarwal.EcommerceApp.entity.Order;
+import com.aggarwal.EcommerceApp.entity.OrderDetail;
 
 @RestController
 public class OrderController {
@@ -19,18 +19,18 @@ public class OrderController {
 	private IOrderservice OServe;
 
 	@RequestMapping("/order")
-	public List<Order> getAllOrders() {
+	public List<OrderDetail> getAllOrders() {
 		return OServe.getAllOrder();
 	}
 
 	@PostMapping("/order")
-	public void addProduct(Order Order) {
+	public void addProduct(OrderDetail Order) {
 		OServe.addOrder(Order);
 
 	}
 
 	@PutMapping
-	public Order updateProduct(@PathVariable("id") int OrderId, Order order) {
+	public OrderDetail updateProduct(@PathVariable("id") int OrderId, OrderDetail order) {
 		OServe.updateOrder(OrderId, order);
 		return order;
 

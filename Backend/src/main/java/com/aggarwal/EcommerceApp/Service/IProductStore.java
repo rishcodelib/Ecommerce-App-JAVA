@@ -1,7 +1,5 @@
 package com.aggarwal.EcommerceApp.Service;
 
-import java.util.List;
-
 import com.aggarwal.EcommerceApp.entity.ProductStore;
 
 public interface IProductStore{

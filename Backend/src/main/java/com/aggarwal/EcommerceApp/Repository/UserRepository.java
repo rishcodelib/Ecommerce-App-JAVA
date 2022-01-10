@@ -8,6 +8,10 @@ import com.aggarwal.EcommerceApp.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer>{
 
+	boolean findByEmail(String email);
+
+	boolean existsByEmail(String email);
+
 
 
 
