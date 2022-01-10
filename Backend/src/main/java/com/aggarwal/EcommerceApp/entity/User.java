@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
 import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
@@ -36,24 +38,31 @@ public class User {
 	private String address;
 
 	@Column(name = "contact", length = 12, nullable = true, unique = true)
-	private int contact;
+	private Long contact;
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "productId")
 	private List<Product> product;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn (name = "orderId")
+	@JoinColumn(name = "orderId")
 	private List<OrderDetail> order;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")
 	private List<CustomerDetail> custDetail;
 
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name ="serial_id")
+	private UserCredentials ucred;
+
+	public Timestamp getTimestamp() {
+		return timestamp;
 	}
 
-	int getUserId() {
+	public void setTimestamp(Timestamp timestamp) {
+		this.timestamp = timestamp;
+	}
+
+	public int getUserId() {
 		return UserId;
 	}
 
@@ -93,31 +102,11 @@ public class User {
 		this.address = address;
 	}
 
-	public int getContact() {
+	public Long getContact() {
 		return contact;
 	}
 
-	public void setContact(int contact) {
-		this.contact = contact;
-	}
-
-	public Timestamp getTimestamp() {
-		return timestamp;
-	}
-
-	public void setTimestamp(Timestamp timestamp) {
-		this.timestamp = timestamp;
-	}
-
-	public User(Timestamp timestamp, int userId, String firstName, String lastName, String email, String address,
-			int contact) {
-		super();
-		this.timestamp = timestamp;
-		UserId = userId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.address = address;
+	public void setContact(Long contact) {
 		this.contact = contact;
 	}
 
@@ -145,5 +134,29 @@ public class User {
 		this.custDetail = custDetail;
 	}
 
+	public UserCredentials getUcred() {
+		return ucred;
+	}
+
+	public void setUcred(UserCredentials ucred) {
+		this.ucred = ucred;
+	}
+
+	public User(Timestamp timestamp, int userId, String firstName, String lastName, String email, String address,
+			Long contact, List<Product> product, List<OrderDetail> order, List<CustomerDetail> custDetail,
+			UserCredentials ucred) {
+		super();
+		this.timestamp = timestamp;
+		UserId = userId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.address = address;
+		this.contact = contact;
+		this.product = product;
+		this.order = order;
+		this.custDetail = custDetail;
+		this.ucred = ucred;
+	}
 
 }

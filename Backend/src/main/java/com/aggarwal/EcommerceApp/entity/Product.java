@@ -25,7 +25,7 @@ public class Product {
 	private int productId;
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "User_id")
+	@JoinColumn(name = "Userid")
 	private User userId;
 
 	@Column(name = "prodName", nullable = true)

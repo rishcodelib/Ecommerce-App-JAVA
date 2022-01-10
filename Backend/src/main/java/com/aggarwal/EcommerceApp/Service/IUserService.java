@@ -8,7 +8,7 @@ public interface IUserService {
 
 	public List<User> getAllUser();
 
-	public String addUser(User user);
+	public void addUser(User user);
 
 	public void updateUser(User user);
 

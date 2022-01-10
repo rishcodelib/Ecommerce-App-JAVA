@@ -24,7 +24,7 @@ public class UserCredentials {
 	private int serial;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "userId")
+	@JoinColumn(name = "Userid")
 	private User userId;
 
 	private String username;
@@ -45,30 +45,6 @@ public class UserCredentials {
 
 	@Column(name = "salt", nullable = true)
 	private String salt;
-	
-	
-	
-
-	public UserCredentials() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public UserCredentials(Timestamp timestamp, int serial, User userId, String username, String password,
-			String oAuthToken, String profileCode, String accountType, boolean isAuthorized, String role, String salt) {
-		super();
-		this.timestamp = timestamp;
-		this.serial = serial;
-		this.userId = userId;
-		this.username = username;
-		this.password = password;
-		this.oAuthToken = oAuthToken;
-		this.profileCode = profileCode;
-		this.accountType = accountType;
-		this.isAuthorized = isAuthorized;
-		this.role = role;
-		this.salt = salt;
-	}
 
 	public Timestamp getTimestamp() {
 		return timestamp;
@@ -110,7 +86,7 @@ public class UserCredentials {
 		this.password = password;
 	}
 
-	public String getOAuthToken() {
+	public String getoAuthToken() {
 		return oAuthToken;
 	}
 
@@ -147,7 +123,7 @@ public class UserCredentials {
 	}
 
 	public void setRole(String role) {
-		role = role;
+		this.role = role;
 	}
 
 	public String getSalt() {
@@ -158,6 +134,20 @@ public class UserCredentials {
 		this.salt = salt;
 	}
 
-	
-	
+	public UserCredentials(Timestamp timestamp, int serial, User userId, String username, String password,
+			String oAuthToken, String profileCode, String accountType, boolean isAuthorized, String role, String salt) {
+		super();
+		this.timestamp = timestamp;
+		this.serial = serial;
+		this.userId = userId;
+		this.username = username;
+		this.password = password;
+		this.oAuthToken = oAuthToken;
+		this.profileCode = profileCode;
+		this.accountType = accountType;
+		this.isAuthorized = isAuthorized;
+		this.role = role;
+		this.salt = salt;
+	}
+
 }

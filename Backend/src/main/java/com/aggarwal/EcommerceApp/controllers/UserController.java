@@ -42,12 +42,8 @@ public class UserController {
 
 	@PostMapping("/user")
 	@ResponseBody
-	public void addUser(User user) {
-		try {
-			myuser.addUser(user);
-		} catch (DataIntegrityViolationException e) {
-			e.printStackTrace();
-		}
+	public void addUser(@RequestBody User user) {
+		myuser.addUser(user);
 
 	}
 

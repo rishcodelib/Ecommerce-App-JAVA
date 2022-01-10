@@ -32,8 +32,6 @@ public class ProductImage {
 	@Column(nullable = true)
 	private String imageExtn;
 
-
-
 	public int getImageId() {
 		return imageId;
 	}
@@ -87,6 +85,5 @@ public class ProductImage {
 		this.imagePath = imagePath;
 		this.imageExtn = imageExtn;
 	}
-
 
 }

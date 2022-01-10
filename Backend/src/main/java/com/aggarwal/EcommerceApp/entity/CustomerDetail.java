@@ -35,7 +35,7 @@ public class CustomerDetail {
 	private String custType;
 
 	@ManyToOne
-	@JoinColumn(name = "AddedbyUser")
+	@JoinColumn(name = "User_Id")
 	private User userId;
 
 	public int getCustomerID() {

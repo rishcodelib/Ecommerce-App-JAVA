@@ -20,15 +20,10 @@ public class Userservice implements IUserService {
 
 	}
 
-	public String addUser(User user) {
-		try {
-			Urepo.save(user);
-			return "user Added Success";
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return "Failed ";
+	public void addUser(User user) {
+
+		Urepo.save(user);
+
 	}
 
 	public void updateUser(User user) {
