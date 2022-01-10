@@ -2,13 +2,18 @@ package com.aggarwal.EcommerceApp.entity;
 
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.UniqueConstraint;
+
 import org.hibernate.annotations.CreationTimestamp;
+
+import com.sun.istack.NotNull;
 
 @Entity
 public class CustomerDetail {
@@ -16,22 +21,23 @@ public class CustomerDetail {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int customerID;
-	
+
 	@CreationTimestamp
 	private Timestamp timeStamp;
-	
+
 	private String custName;
-	
+
 	private String custAddress;
-	
+
 	private String city;
-	
+
 	private String State;
 	
-	private int custContact;
-	
+	@Column(unique = true)
+	private Long custContact;
+
 	private String custType;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "AddedbyUser")
 	private User userId;
@@ -84,11 +90,11 @@ public class CustomerDetail {
 		State = state;
 	}
 
-	public int getCustContact() {
+	public long getCustContact() {
 		return custContact;
 	}
 
-	public void setCustContact(int custContact) {
+	public void setCustContact(Long custContact) {
 		this.custContact = custContact;
 	}
 
@@ -109,7 +115,7 @@ public class CustomerDetail {
 	}
 
 	public CustomerDetail(int customerID, Timestamp timeStamp, String custName, String custAddress, String city,
-			String state, int custContact, String custType, User userId) {
+			String state, Long custContact, String custType, User userId) {
 		super();
 		this.customerID = customerID;
 		this.timeStamp = timeStamp;
@@ -126,6 +132,5 @@ public class CustomerDetail {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
+
 }

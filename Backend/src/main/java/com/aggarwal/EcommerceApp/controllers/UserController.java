@@ -27,13 +27,12 @@ public class UserController {
 	public List<User> GetAllUsers() {
 		return myuser.getAllUser();
 	}
-	
+
 	@GetMapping("/user/{id}")
 	public User getUser(@RequestParam("userId") int userId) {
 		System.out.println(userId);
 		return myuser.getUser(userId);
 	}
-	
 
 	@PostMapping("/user/signin")
 	public Boolean signin(@RequestParam("email") String email, @RequestParam("password") String password) {
