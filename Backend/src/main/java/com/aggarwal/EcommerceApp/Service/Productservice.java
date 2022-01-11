@@ -27,10 +27,11 @@ public class Productservice implements IProductservice {
 	public void addProduct(Product Prod) {
 		Prod.setProductId(Prod.getProductid());
 		Prepo.save(Prod);
-		
+
 	}
 
 	public void updateProduct(Product prod) {
+
 		Prepo.save(prod);
 	}
 
