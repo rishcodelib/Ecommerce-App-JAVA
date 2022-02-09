@@ -3,6 +3,7 @@ package com.aggarwal.EcommerceApp.Service;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.oauth2.resource.OAuth2ResourceServerProperties.Jwt;
 
 import com.aggarwal.EcommerceApp.Repository.ProductImageRepository;
 import com.aggarwal.EcommerceApp.Repository.ProductRepo;
@@ -22,6 +23,7 @@ public class Productservice implements IProductservice {
 		List<Product> prod = new ArrayList<>();
 		Prepo.findAll().forEach(prod::add);
 		return prod;
+		
 	}
 
 	public void addProduct(Product Prod) {
@@ -31,7 +33,6 @@ public class Productservice implements IProductservice {
 	}
 
 	public void updateProduct(Product prod) {
-
 		Prepo.save(prod);
 	}
 

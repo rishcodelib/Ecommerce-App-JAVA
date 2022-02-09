@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.hibernate.exception.DataException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,6 +35,7 @@ public class UserController {
 
 	@PostMapping("/user/signin")
 	public Boolean signin(@RequestParam("email") String email, @RequestParam("password") String password) {
+		
 		return myuser.login(email, password);
 
 	}
@@ -43,6 +43,7 @@ public class UserController {
 	@PostMapping("/user")
 	@ResponseBody
 	public void addUser(@RequestBody User user) {
+		
 		myuser.addUser(user);
 
 	}
