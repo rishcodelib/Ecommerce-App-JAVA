@@ -16,6 +16,7 @@ import { AllOrdersComponent } from './component/all-orders/all-orders.component'
 import { AlertComponent } from './component/alert/alert.component';
 import { PageinationComponent } from './component/pageination/pageination.component';
 import { NavbarSideComponent } from './component/navbar-side/navbar-side.component';
+import { ImageRoundComponent } from './component/image-round/image-round.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NavbarSideComponent } from './component/navbar-side/navbar-side.compone
     AllOrdersComponent,
     AlertComponent,
     PageinationComponent,
-    NavbarSideComponent
+    NavbarSideComponent,
+    ImageRoundComponent
   ],
   imports: [
     BrowserModule,
