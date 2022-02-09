@@ -15,6 +15,7 @@ import { OrderDetailsComponent } from './component/order-details/order-details.c
 import { AllOrdersComponent } from './component/all-orders/all-orders.component';
 import { AlertComponent } from './component/alert/alert.component';
 import { PageinationComponent } from './component/pageination/pageination.component';
+import { NavbarSideComponent } from './component/navbar-side/navbar-side.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PageinationComponent } from './component/pageination/pageination.compon
     OrderDetailsComponent,
     AllOrdersComponent,
     AlertComponent,
-    PageinationComponent
+    PageinationComponent,
+    NavbarSideComponent
   ],
   imports: [
     BrowserModule,
