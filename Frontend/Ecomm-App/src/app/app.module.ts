@@ -17,6 +17,7 @@ import { AlertComponent } from './component/alert/alert.component';
 import { PageinationComponent } from './component/pageination/pageination.component';
 import { NavbarSideComponent } from './component/navbar-side/navbar-side.component';
 import { ImageRoundComponent } from './component/image-round/image-round.component';
+import { ContactComponent } from './component/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ImageRoundComponent } from './component/image-round/image-round.compone
     AlertComponent,
     PageinationComponent,
     NavbarSideComponent,
-    ImageRoundComponent
+    ImageRoundComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,10 @@
 <app-navbar></app-navbar>
-<!-- <app-order-details></app-order-details>
-<app-all-orders></app-all-orders> -->
-<router-outlet></router-outlet>
+<div class="row">
+  <div class="col-md-2">
+    <app-navbar-side></app-navbar-side>
+  </div>
+  <div class="col-md-10">
+    <router-outlet></router-outlet>
+  </div>
+</div>
 <app-footer></app-footer>
