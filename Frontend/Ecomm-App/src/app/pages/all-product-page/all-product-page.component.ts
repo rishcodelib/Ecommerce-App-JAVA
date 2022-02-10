@@ -9,7 +9,7 @@ export class AllProductPageComponent implements OnInit {
   productListArr: any;
   productImagesArr: any;
   private _productsizeArr: any;
-  breadcrumb: any = [{ name: 'Dashboard',url:'/dashboard' }, { name: 'All Products',url:'/products' }];
+  breadcrumb: any = [{ name: 'Dashboard',url:'/dashboard' }, { name: 'Products',url:'/products' }];
 
   public get productsizeArr(): any {
     return this._productsizeArr;
