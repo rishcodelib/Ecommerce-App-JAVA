@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-product.component.css'],
 })
 export class AddProductComponent implements OnInit {
-  breadcrumb: any = ['Product','Add Products'];
-  activeItem: any = 'Add Products';
+  breadcrumb: any = [
+    { name: 'Dashboard', url: '/dashboard' },
+    { name: 'Products', url: '/products' },
+    { name: 'Add Products', url: '/addProducts' },
+  ];
+
   constructor() {}
 
   ngOnInit(): void {}

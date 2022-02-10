@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BreadcrumbComponent implements OnInit {
   @Input() breadcrumb: any = [];
-  @Input() ItemActive: any;
+  // @Input() link: any;
   constructor() {}
 
   ngOnInit(): void {}

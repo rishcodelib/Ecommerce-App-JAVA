@@ -1,6 +1,7 @@
 <ul class="breadcrumb">
-  <li class="breadcrumb-item" *ngFor="let item of breadcrumb"><a href="#">
-      {{item}}
+  <li class="breadcrumb-item" *ngFor="let item of breadcrumb">
+    <a href="{{item.url}}">
+      {{item.name}}
     </a></li>
 
   <!-- <li class="breadcrumb-item active"><a href="#">

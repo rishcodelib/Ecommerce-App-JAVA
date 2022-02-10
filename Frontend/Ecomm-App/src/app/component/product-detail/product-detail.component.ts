@@ -12,10 +12,14 @@ export class ProductDetailComponent implements OnInit {
   size: any = ['S', 'M', 'L', 'XL'];
   imagePath: any | null;
   imageName: any | null;
-  fullimage: any | null ="../../../assets/products/tshirt.jpeg";
+  fullimage: any | null = '../../../assets/products/tshirt.jpeg';
   inStock: any = false;
   Stockclass: any;
-
+  breadcrumb: any = [
+    { name: 'Dashboard', url: '/dashboard' },
+    { name: 'Products', url: '/products' },
+    { name: 'Product Detail', url: '/product-detail' },
+  ];
   constructor(private pServe: ProductServiceService) {}
 
   ngOnInit(): void {

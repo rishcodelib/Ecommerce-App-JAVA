@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddProductComponent } from './component/add-product/add-product.component';
 import { AllOrdersComponent } from './component/all-orders/all-orders.component';
+import { CheckoutComponent } from './component/checkout/checkout.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { ItemCardComponent } from './component/item-card/item-card.component';
 import { MessagesComponent } from './component/messages/messages.component';
 import { OrderDetailsComponent } from './component/order-details/order-details.component';
+import { ProductDetailComponent } from './component/product-detail/product-detail.component';
 import { SettingsComponent } from './component/settings/settings.component';
 import { SigninComponent } from './component/signin/signin.component';
+import { TransactionsComponent } from './component/transactions/transactions.component';
+import { WalletComponent } from './component/wallet/wallet.component';
 import { AllProductPageComponent } from './pages/all-product-page/all-product-page.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
@@ -36,7 +41,7 @@ const routes: Routes = [
   },
   {
     path: 'orders',
-    component: OrderDetailsComponent,
+    component: AllOrdersComponent,
   },
   {
     path: 'products',
@@ -44,7 +49,7 @@ const routes: Routes = [
   },
   {
     path: 'transactions',
-    component: AllOrdersComponent,
+    component: TransactionsComponent,
   },
   {
     path: 'signin',
@@ -57,6 +62,26 @@ const routes: Routes = [
   {
     path: 'messages',
     component: MessagesComponent,
+  },
+  {
+    path: 'addProducts',
+    component: AddProductComponent,
+  },
+  {
+    path: 'wallet',
+    component: WalletComponent,
+  },
+  {
+    path: 'product-detail',
+    component: ProductDetailComponent,
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
+  },
+  {
+    path: 'order-detail',
+    component: OrderDetailsComponent,
   },
 ];
 

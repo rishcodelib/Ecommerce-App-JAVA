@@ -28,6 +28,9 @@ import { CartComponent } from './component/cart/cart.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AllProductPageComponent } from './pages/all-product-page/all-product-page.component';
+import { SideHeaderComponent } from './component/side-header/side-header.component';
+import { TransactionsComponent } from './component/transactions/transactions.component';
+import { WalletComponent } from './component/wallet/wallet.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +58,9 @@ import { AllProductPageComponent } from './pages/all-product-page/all-product-pa
     AddProductComponent,
     CartComponent,
     AllProductPageComponent,
+    SideHeaderComponent,
+    TransactionsComponent,
+    WalletComponent,
   ],
   imports: [
     BrowserModule,

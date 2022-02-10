@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./messages.component.css']
 })
 export class MessagesComponent implements OnInit {
-
+  breadcrumb:any = ['dashboard','messages']
   constructor() { }
 
   ngOnInit(): void {
