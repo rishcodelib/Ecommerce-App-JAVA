@@ -18,6 +18,9 @@ import { PageinationComponent } from './component/pageination/pageination.compon
 import { NavbarSideComponent } from './component/navbar-side/navbar-side.component';
 import { ImageRoundComponent } from './component/image-round/image-round.component';
 import { ContactComponent } from './component/contact/contact.component';
+import { ProductDetailComponent } from './component/product-detail/product-detail.component';
+import { CheckoutComponent } from './component/checkout/checkout.component';
+import { BreadcrumbComponent } from './component/breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { ContactComponent } from './component/contact/contact.component';
     PageinationComponent,
     NavbarSideComponent,
     ImageRoundComponent,
-    ContactComponent
+    ContactComponent,
+    ProductDetailComponent,
+    CheckoutComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,
