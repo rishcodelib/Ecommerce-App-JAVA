@@ -1,1 +1,29 @@
-<p>wallet works!</p>
+<app-side-header header="My Wallet" [breadcrumb]="breadcrumb"></app-side-header>
+<div class="wallet">
+  
+  <form action="#">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="mb-3 ">
+          <label for="userId" class="form-label">User ID:</label>
+          <input type="userId" class="form-control" id="userId" placeholder="Enter user ID" name="userId">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="mb-3">
+          <label for="type" class="form-label">Type:</label>
+          <input type="type" class="form-control" id="type" placeholder="Enter Vendor / Customer" name="type">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="mb-3">
+          <label for="amount" class="form-label">Amount:</label>
+          <input type="amount" class="form-control" id="amount" placeholder="Enter Amount" name="amount">
+        </div>
+      </div>
+      <div class="col-md-3 ">
+        <button type="submit" class="btn btn-info">Add Money</button>
+      </div>
+    </div>
+  </form>
+</div>
