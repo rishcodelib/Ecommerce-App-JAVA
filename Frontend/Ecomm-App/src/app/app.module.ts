@@ -21,6 +21,13 @@ import { ContactComponent } from './component/contact/contact.component';
 import { ProductDetailComponent } from './component/product-detail/product-detail.component';
 import { CheckoutComponent } from './component/checkout/checkout.component';
 import { BreadcrumbComponent } from './component/breadcrumb/breadcrumb.component';
+import { SettingsComponent } from './component/settings/settings.component';
+import { MessagesComponent } from './component/messages/messages.component';
+import { AddProductComponent } from './component/add-product/add-product.component';
+import { CartComponent } from './component/cart/cart.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { AllProductPageComponent } from './pages/all-product-page/all-product-page.component';
 
 @NgModule({
   declarations: [
@@ -42,11 +49,17 @@ import { BreadcrumbComponent } from './component/breadcrumb/breadcrumb.component
     ContactComponent,
     ProductDetailComponent,
     CheckoutComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    SettingsComponent,
+    MessagesComponent,
+    AddProductComponent,
+    CartComponent,
+    AllProductPageComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

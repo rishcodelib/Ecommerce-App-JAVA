@@ -1,0 +1,84 @@
+<div class="container mt-3">
+  <h2>Add Product</h2>
+  <app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+  <hr />
+  <form action="#">
+
+    <div class="row">
+      <div class="col-md-6">
+        <h5> Product Details:</h5>
+        <hr />
+        <div class="mb-3 mt-3">
+          <label for="formFile" class="form-label">Upload Image</label>
+          <input class="form-control" type="file" id="formFile">
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="pName">Product Name:</label>
+          <input type="text" class="form-control" id="pName" placeholder="Enter pName" name="pName">
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="description">Product Description:</label>
+          <input type="text" class="form-control" id="description" placeholder="Enter description" name="description">
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="mb-3 mt-3">
+              <label for="description">Product Amount:</label>
+              <input type="text" class="form-control" id="description" placeholder="Enter description"
+                name="description">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="mb-3 mt-3">
+              <label for="description">Percentage Increase:</label>
+              <input type="text" class="form-control" id="description" placeholder="Enter description"
+                name="description">
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="description">Cost to Customer:</label>
+              <input type="text" class="form-control" id="description" placeholder="Enter description"
+                name="description" disabled>
+            </div>
+          </div>
+          <div class="col-md-4 ">
+            <div class="mb-3 mt-3">
+              <label for="description">Percentage Increase:</label>
+              <input type="text" class="form-control " id="description" placeholder="Generated Automatically"
+                name="description">
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="description">Cost to Vendor:</label>
+              <input type="text" class="form-control " id="description" placeholder="Generated Automatically"
+                name="description" disabled>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h5> Stock Details:</h5>
+        <hr />
+        <div class="row">
+          <div class="col-md-5">
+            <div class="mb-3 mt-3">
+              <label for="size">Product Size:</label>
+              <input type="text" class="form-control" id="size" placeholder="Enter size" name="size">
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="mb-3 mt-3">
+              <label for="quantity">Product Quantity:</label>
+              <input type="text" class="form-control" id="quantity" placeholder="Enter quantity" name="quantity">
+            </div>
+          </div>
+          <div class="col-md-2 h-100">
+            <div class="mb-3 mt-3 d-flex ">
+              <button type="s" class="btn btn-primary"> <i class="fa fa-plus" aria-hidden="true"></i></button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Upload Product</button>
+  </form>
+</div>

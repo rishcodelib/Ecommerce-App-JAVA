@@ -1,1 +1,34 @@
 <p>home-page works!</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>timestamp</th>
+      <th>ProductId</th>
+      <th>UserID</th>
+      <th>name</th>
+      <th>description</th>
+      <th>inStock</th>
+      <th>price</th>
+      <th>productImages</th>
+      <th>productsize</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let item of productList">
+      <td>{{item.timestamp}}</td>
+      <td>{{item.productId}}</td>
+      <td>{{item.userId}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.description}}</td>
+      <td>{{item.inStock}}</td>
+      <td>{{item.price}}</td>
+      <td>{{item.productImages}}</td>
+      <td *ngFor="let size of item.productsize">
+        Size: {{size.size}}
+        Quantity: {{size.quantity}}
+      </td>
+
+    </tr>
+  </tbody>
+</table>
