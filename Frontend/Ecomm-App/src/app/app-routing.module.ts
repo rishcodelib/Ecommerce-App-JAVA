@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddProductComponent } from './component/add-product/add-product.component';
 import { AllOrdersComponent } from './component/all-orders/all-orders.component';
+import { CartComponent } from './component/cart/cart.component';
 import { CheckoutComponent } from './component/checkout/checkout.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { ItemCardComponent } from './component/item-card/item-card.component';
@@ -78,6 +79,10 @@ const routes: Routes = [
   {
     path: 'checkout',
     component: CheckoutComponent,
+  },
+  {
+    path: 'cart',
+    component: CartComponent,
   },
   {
     path: 'order-detail',
