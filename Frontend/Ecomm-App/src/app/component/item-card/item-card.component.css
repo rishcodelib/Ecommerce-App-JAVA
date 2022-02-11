@@ -1,0 +1,30 @@
+.badge{
+  margin-left: 2px;
+}
+.myProduct{
+  text-decoration: none;
+  color: black;
+}
+
+.bg-blue{
+  background-color: blue;
+}
+.bg-red{
+  background-color: red;
+}
+.bg-yellow{
+  background-color: yellow;
+}
+.bg-orange{
+  background-color: orange;
+}
+.bg-pink{
+  background-color: pink;
+}
+.bg-black{
+  background-color: pink;
+}
+.bg-white{
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.468);
+}

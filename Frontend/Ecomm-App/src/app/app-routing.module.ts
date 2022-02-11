@@ -72,7 +72,7 @@ const routes: Routes = [
     component: WalletComponent,
   },
   {
-    path: 'product-detail',
+    path: 'product-detail/:id',
     component: ProductDetailComponent,
   },
   {

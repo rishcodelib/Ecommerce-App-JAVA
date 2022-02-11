@@ -1,7 +1,7 @@
 <app-side-header header="All Products" [breadcrumb]="breadcrumb"></app-side-header>
 <div class="row">
-  <div class="col-md-3" *ngFor="let item of productListArr">
-    <app-item-card [productName]="item.name" [productPrice]="item.price"></app-item-card>
+  <div class="col-md-2" *ngFor="let item of productListArr">
+    <app-item-card [productName]="item.name" [productPrice]="item.price" [productId]="item.productId"></app-item-card>
   </div>
 </div>
 

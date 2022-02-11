@@ -1,11 +1,18 @@
-<div class="container ">
-  <div class="card img-fluid border-0 p-2 w-10" style="width:150px">
-    <img class="card-img-top img-thumbnail " src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
-      alt="Card image">
-    <div class="card-img">
+<a class="myProduct mx-0 my-auto" href="/product-detail/{{productId}}">
+  <div class="card img-fluid border-1 ">
+    <img class="card-img img-thumbnail border-0 "
+      src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png" alt="Card image">
+    <div class="card-text ps-2 pb-2">
       <h6 class="card-title pt-4">{{productName}}</h6>
-      <p class="card-text">Price : INR: {{productPrice}}/-</p>
-      <a href="/product-detail" class="card-text">Quick Look</a>
+      <p class="card-text">Price : INR: {{productPrice}}/-
+        <br/>
+        <span class="badge bg-blue ">&nbsp;</span>
+        <span class="badge bg-red ">&nbsp;</span>
+        <span class="badge bg-yellow ">&nbsp;</span>
+        <span class="badge bg-pink ">&nbsp;</span>
+        <span class="badge bg-white ">&nbsp;</span>
+        <span class="badge bg-black ">&nbsp;</span>
+      </p>
     </div>
   </div>
-</div>
+</a>
