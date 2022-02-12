@@ -31,6 +31,8 @@ import { AllProductPageComponent } from './pages/all-product-page/all-product-pa
 import { SideHeaderComponent } from './component/side-header/side-header.component';
 import { TransactionsComponent } from './component/transactions/transactions.component';
 import { WalletComponent } from './component/wallet/wallet.component';
+import { AllUsersComponent } from './component/all-users/all-users.component';
+import { UserDetailComponent } from './component/user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +63,8 @@ import { WalletComponent } from './component/wallet/wallet.component';
     SideHeaderComponent,
     TransactionsComponent,
     WalletComponent,
+    AllUsersComponent,
+    UserDetailComponent,
   ],
   imports: [
     BrowserModule,

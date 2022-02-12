@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddProductComponent } from './component/add-product/add-product.component';
 import { AllOrdersComponent } from './component/all-orders/all-orders.component';
+import { AllUsersComponent } from './component/all-users/all-users.component';
 import { CartComponent } from './component/cart/cart.component';
 import { CheckoutComponent } from './component/checkout/checkout.component';
 import { ContactComponent } from './component/contact/contact.component';
@@ -12,6 +13,7 @@ import { ProductDetailComponent } from './component/product-detail/product-detai
 import { SettingsComponent } from './component/settings/settings.component';
 import { SigninComponent } from './component/signin/signin.component';
 import { TransactionsComponent } from './component/transactions/transactions.component';
+import { UserDetailComponent } from './component/user-detail/user-detail.component';
 import { WalletComponent } from './component/wallet/wallet.component';
 import { AllProductPageComponent } from './pages/all-product-page/all-product-page.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
@@ -87,6 +89,14 @@ const routes: Routes = [
   {
     path: 'order-detail',
     component: OrderDetailsComponent,
+  },
+  {
+    path: 'all-users',
+    component: AllUsersComponent,
+  },
+  {
+    path: 'user-detail/:id',
+    component: UserDetailComponent,
   },
 ];
 

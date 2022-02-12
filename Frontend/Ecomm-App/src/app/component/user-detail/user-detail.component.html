@@ -1,0 +1,21 @@
+<app-side-header header="Product Detail" [breadcrumb]="breadcrumb"></app-side-header>
+<div class="row">
+
+  <div class="col-md-6 text-center">
+
+    <img src="#" class="img-thumbnail" alt="image" />
+  </div>
+  <div class="col-md-6">
+    <h4> Creation Date : {{userDetail.timestamp}} </h4>
+    <h3> User ID: {{userDetail.userId}}</h3>
+    <h3> First Name: {{userDetail.firstName}}</h3>
+    <h4> Last Name: {{userDetail.lastName}} </h4>
+    <h4> Contact: {{userDetail.contact}} </h4>
+    <h4> Email ID: {{userDetail.email}} </h4>
+    <h4> Customer Associated: {{userDetail.custDetail}} </h4>
+    <h4> Total Orders: {{userDetail.order.length}} </h4>
+    <h4> Total Products: {{userDetail.product.length}} </h4>
+
+  </div>
+
+</div>

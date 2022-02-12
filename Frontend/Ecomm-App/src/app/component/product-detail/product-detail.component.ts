@@ -39,8 +39,12 @@ export class ProductDetailComponent implements OnInit {
 
     this.pServe.getProduct(this.Id).subscribe((res: any) => {
       this.productDetail = res;
-      
-      console.log((this.productDetail));
+
+      console.log(this.productDetail);
     });
+  }
+  cart(id: string) {
+    localStorage.setItem('productId' + id, JSON.stringify(id));
+    return console.log('Product ADDED' + id);
   }
 }

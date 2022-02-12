@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
   breadcrumb: any = [
@@ -13,9 +13,9 @@ export class CartComponent implements OnInit {
     { name: 'Cart', url: '/cart' },
   ];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+   
   }
-
 }
