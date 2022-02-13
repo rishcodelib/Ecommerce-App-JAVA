@@ -24,6 +24,11 @@ public class UserController {
 	@Autowired
 	private IUserService myuser;
 	
+	@GetMapping("/")
+	public String homepage() {
+		return "I am Working";
+	}
+	
 	@GetMapping("/user")
 	public List<User> GetAllUsers() {
 		return myuser.getAllUser();

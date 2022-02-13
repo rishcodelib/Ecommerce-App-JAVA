@@ -33,6 +33,8 @@ import { TransactionsComponent } from './component/transactions/transactions.com
 import { WalletComponent } from './component/wallet/wallet.component';
 import { AllUsersComponent } from './component/all-users/all-users.component';
 import { UserDetailComponent } from './component/user-detail/user-detail.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -69,7 +71,8 @@ import { UserDetailComponent } from './component/user-detail/user-detail.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
