@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.exception.DataException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,19 +17,20 @@ import org.springframework.web.bind.annotation.RestController;
 import com.aggarwal.EcommerceApp.Service.IUserService;
 import com.aggarwal.EcommerceApp.entity.User;
 
+@CrossOrigin
 @RestController
 public class UserController {
 
 	@Autowired
 	private IUserService myuser;
-
+	
 	@GetMapping("/user")
 	public List<User> GetAllUsers() {
 		return myuser.getAllUser();
 	}
 
 	@GetMapping("/user/{id}")
-	public User getUser(@RequestParam("userId") int userId) {
+	public User getUser(@PathVariable("id") int userId) {
 		System.out.println(userId);
 		return myuser.getUser(userId);
 	}

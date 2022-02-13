@@ -51,7 +51,7 @@ public class User {
 	private List<CustomerDetail> custDetail;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name ="serial_id")
+	@JoinColumn(name = "serial_id")
 	private UserCredentials ucred;
 
 	public Timestamp getTimestamp() {
@@ -157,6 +157,10 @@ public class User {
 		this.order = order;
 		this.custDetail = custDetail;
 		this.ucred = ucred;
+	}
+
+	public User() {
+		super();
 	}
 
 }
