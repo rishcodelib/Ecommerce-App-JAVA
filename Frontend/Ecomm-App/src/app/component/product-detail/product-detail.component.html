@@ -1,4 +1,5 @@
 <app-side-header header="Product Detail" [breadcrumb]="breadcrumb"></app-side-header>
+<app-alert alertName="{{NewalertName}}" alertDesc="{{NewalerDesc}}"></app-alert>
 <div class="row">
 
   <div class="col-md-6 text-center">
@@ -20,7 +21,7 @@
         </li>
       </ul>
     </div>
-    <br/>
+    <br />
     <button class="btn btn-info" (click)="cart(productDetail.productId)">Add to cart</button>
   </div>
 

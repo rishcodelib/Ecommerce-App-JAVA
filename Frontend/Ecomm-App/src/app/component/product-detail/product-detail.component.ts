@@ -26,6 +26,9 @@ export class ProductDetailComponent implements OnInit {
   productDetail: any;
   Id!: number;
 
+  NewalertName: any | undefined;
+  NewalerDesc: any | undefined;
+
   constructor(
     private pServe: ProductServiceService,
     private act: ActivatedRoute
@@ -39,12 +42,13 @@ export class ProductDetailComponent implements OnInit {
 
     this.pServe.getProduct(this.Id).subscribe((res: any) => {
       this.productDetail = res;
-
       console.log(this.productDetail);
     });
   }
   cart(id: string) {
     localStorage.setItem('productId' + id, JSON.stringify(id));
+    this.NewalertName = 'Success';
+    this.NewalerDesc = 'Order Added to Cart';
     return console.log('Product ADDED' + id);
   }
 }
