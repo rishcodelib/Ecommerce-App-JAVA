@@ -3,13 +3,16 @@
 <div class="cart ">
   <div class="row">
     <div class="col-md-4">
-      SPACE FOR PRODDUCT IMAGE
+      {{cartStatus}}
     </div>
     <div class="col-md-4">
-      Product Name: <br />
-      Product Description:<br />
-      Quantity:<br />
-      Color:<br />
+      <h3> {{cartStatus}}</h3>
+      <!-- <span *ngFor="let product of productDetail">
+      Product Name: {{product.name}}<br />
+    </span> -->
+<!-- Product Description:{{productDetail.description}} <br /> -->
+      Quantity:{{quantity}}<br />
+      Color:{{color}} <br /> -->
     </div>
     <div class="col-md-4">
       <span class="badge bg-warning ">Out of Stock</span>
