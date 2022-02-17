@@ -1,3 +1,4 @@
+import { JsonpClientBackend } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/entity/product/product';
 import { ProductServiceService } from 'src/app/service/product/product-service.service';
@@ -22,6 +23,7 @@ export class CartComponent implements OnInit {
   color: any;
   productDetail: any;
   cartItems: Array<String> | undefined;
+  stock: boolean = true;
   constructor(private pserve: ProductServiceService) {}
 
   ngOnInit(): void {
@@ -29,22 +31,33 @@ export class CartComponent implements OnInit {
 
     if (this.productCart == undefined) {
       this.cartStatus = 'Cart is Empty';
-    } else {
-      var cart = JSON.parse(this.productCart);
-      cart.forEach((e: { productId: string; size: string }) => {
-        this.productDetail = this.getCartProduct(e.productId, e.size);
-        // console.log(this.productDetail);
-      });
-      // console.log(this.cartItems);
     }
+
+    this.productCart = JSON.parse(this.productCart);
+    // this.deleteFromCart(3);
   }
 
   getCartProduct(id: string, size: string) {
     var productId = JSON.parse(id);
     this.pserve.getProduct(productId).subscribe((res: any) => {
       return res;
-      // this.productDetail = { productId: res };
-      // console.log(this.productDetail);
     });
+  }
+
+  deleteFromCart(id: number) {
+    var cart: any = localStorage.getItem('products');
+    var cart_obj = JSON.parse(cart);
+    console.log(cart_obj);
+
+    cart_obj.forEach((e: any, index: number) => {
+      if (e.productId === id) {
+        console.log('ProductId Found' + id);
+        // delete cart_obj[0];
+        console.log('Deleted');
+      }
+    });
+    
+      localStorage.setItem('products', JSON.stringify(cart_obj));
+    JSON.stringify(cart_obj);
   }
 }

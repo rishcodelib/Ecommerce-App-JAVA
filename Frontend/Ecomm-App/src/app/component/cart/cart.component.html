@@ -1,29 +1,27 @@
-<p>cart works!</p>
 <app-side-header header="Shopping Cart" [breadcrumb]="breadcrumb"></app-side-header>
 <div class="cart ">
-  <div class="row">
+  <h3> {{cartStatus}}</h3>
+  <div class="row " *ngFor="let e of productCart">
     <div class="col-md-4">
       {{cartStatus}}
     </div>
-    <div class="col-md-4">
-      <h3> {{cartStatus}}</h3>
-      <!-- <span *ngFor="let product of productDetail">
-      Product Name: {{product.name}}<br />
-    </span> -->
-<!-- Product Description:{{productDetail.description}} <br /> -->
-      Quantity:{{quantity}}<br />
-      Color:{{color}} <br /> -->
+    <div class="col-md-4 ">
+      <b>Product ID:</b> {{e.productId}} <br />
+      <b>Size:</b> {{e.size}}<br />
+      <b>Product Description:</b> {{e.desc}} <br />
+      <b>Quantity:</b>{{e.qty}}<br />
+      <!-- <b> Color:</b>{{color}} <br /> -->
     </div>
-    <div class="col-md-4">
-      <span class="badge bg-warning ">Out of Stock</span>
-      <span class="badge bg-success ">In Stock</span>
+    <div class="col-md-4 text-end pb-3">
+      <span *ngIf="(!stock)" class="badge bg-warning ">Out of Stock</span>
+      <span *ngIf="(stock)" class="badge bg-success ">In Stock</span>
       <h3>Price: $1,000/-</h3>
-      <button class="btn btn-danger "> Delete from cart</button>
+      <!-- <button class="btn btn-danger " > Delete from cart</button> -->
     </div>
-    <div class="col-md-6">
-    </div>
+  
+    <hr />
   </div>
-  <hr />
+
   <div class="row">
     <div class="col-md-10"></div>
     <div class="col-md-2">

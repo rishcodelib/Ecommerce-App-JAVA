@@ -24,14 +24,14 @@
       </ul>
     </div>
     <ul class="navbar-nav justify-content-end d-none d-md-flex">
-      <li class="nav-item ">
+      <!-- <li class="nav-item ">
         <a class="nav-link" href="#"><i class="fa fa-bell" aria-hidden="true"></i> &nbsp;<span
             class="badge bg-warning">4</span></a>
-      </li>
+      </li> -->
       <li class="nav-item ">
         <a class="nav-link" href="/cart">
-          <i class="fa fa-shopping-cart fa-1x" aria-hidden="true"> </i> &nbsp; <span
-            class="badge bg-info"> 4 </span></a>
+          <i class="fa fa-shopping-cart fa-1x" aria-hidden="true"> </i> &nbsp; <span *ngIf ="(cartItems)"
+            class="badge bg-info"> {{cartItems}} </span></a>
       </li>
       <li class="nav-item ">
         <a class="nav-link" href="/signin">Login</a>

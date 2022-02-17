@@ -3,13 +3,14 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-
-  constructor() { }
+  cartItems: number | undefined;
+  constructor() {}
 
   ngOnInit(): void {
+    var cart: any = localStorage.getItem('products');
+    this.cartItems = JSON.parse(cart).length;
   }
-
 }

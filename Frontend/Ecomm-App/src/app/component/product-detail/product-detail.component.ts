@@ -46,7 +46,8 @@ export class ProductDetailComponent implements OnInit {
       console.log(this.productDetail);
     });
   }
-  cart(id: number, selectedSize: String = 'S') {
+
+  cart(id: number, selectedSize: String = 'S', description = "description", quantity =1  ) {
     if (localStorage.getItem('products')) {
       this.productCart = localStorage.getItem('products');
       var cart = JSON.parse(this.productCart);
@@ -59,7 +60,7 @@ export class ProductDetailComponent implements OnInit {
         
       });
     } else {
-      this.productCart = [{ productId: id, size: selectedSize }];
+      this.productCart = [{ productId: id, size: selectedSize, desc: description, qty: quantity  }];
       localStorage.setItem('products', JSON.stringify(this.productCart));
     }
     this.Newalert();
