@@ -26,7 +26,6 @@ export class ProductDetailComponent implements OnInit {
   productDetail: any;
   Id!: number;
   productCart: any;
-
   NewalertName: any | undefined;
   NewalerDesc: any | undefined;
 
@@ -47,20 +46,20 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
-  cart(id: number, selectedSize: String = 'S', description = "description", quantity =1  ) {
+  cart(id: number, selectedSize: String = 'S', description = this.productDetail.description, quantity = 1, amount =this.productDetail.price ) {
     if (localStorage.getItem('products')) {
       this.productCart = localStorage.getItem('products');
       var cart = JSON.parse(this.productCart);
       var totalItems = cart.length;
      
-      cart[totalItems] = { productId: id, size: selectedSize };
+      cart[totalItems] = { productId: id, size: selectedSize,desc: this.productDetail.description,qty:quantity ,amt: amount };
       localStorage.setItem('products', JSON.stringify(cart));
       cart.forEach((e: { productId: string; }) => {
         console.log(e.productId);
         
       });
     } else {
-      this.productCart = [{ productId: id, size: selectedSize, desc: description, qty: quantity  }];
+      this.productCart = [{ productId: id, size: selectedSize, desc: description, qty: quantity ,amt:amount }];
       localStorage.setItem('products', JSON.stringify(this.productCart));
     }
     this.Newalert();

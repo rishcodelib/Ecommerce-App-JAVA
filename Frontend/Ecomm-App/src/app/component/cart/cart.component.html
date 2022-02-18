@@ -1,10 +1,12 @@
 <app-side-header header="Shopping Cart" [breadcrumb]="breadcrumb"></app-side-header>
 <div class="cart ">
-  <h3> {{cartStatus}}</h3>
-  <div class="row " *ngFor="let e of productCart">
-    <div class="col-md-4">
-      {{cartStatus}}
+  <div *ngIf ="cartStatus" class="row">
+    <div class="col-md-12 text-center ">
+      <h3> {{cartStatus}} <i class="fa fa-cart-arrow-down fa-2x " aria-hidden="true"></i> </h3>
     </div>
+  </div>
+  <div class="row " *ngFor="let e of productCart">
+
     <div class="col-md-4 ">
       <b>Product ID:</b> {{e.productId}} <br />
       <b>Size:</b> {{e.size}}<br />
@@ -15,17 +17,20 @@
     <div class="col-md-4 text-end pb-3">
       <span *ngIf="(!stock)" class="badge bg-warning ">Out of Stock</span>
       <span *ngIf="(stock)" class="badge bg-success ">In Stock</span>
-      <h3>Price: $1,000/-</h3>
+      <h3>Price: ${{e.amt}}/-</h3>
       <!-- <button class="btn btn-danger " > Delete from cart</button> -->
     </div>
-  
+
     <hr />
   </div>
-
   <div class="row">
-    <div class="col-md-10"></div>
-    <div class="col-md-2">
-      <button class="btn btn-success "> Proceed to Pay</button>
+    <div class="col-md-8"></div>
+    <div class="col-md-2" *ngIf="!cartStatus"> 
+      <button  class="btn btn-danger " (click)="emptyCart()"> Empty
+        cart</button>
+    </div>
+    <div class="col-md-2" *ngIf="!cartStatus">
+      <a class="btn btn-success " href="/order-detail"> Proceed to Pay</a>
     </div>
   </div>
 </div>

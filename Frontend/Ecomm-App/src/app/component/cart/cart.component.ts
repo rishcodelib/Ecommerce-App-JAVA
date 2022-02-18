@@ -36,6 +36,9 @@ export class CartComponent implements OnInit {
     this.productCart = JSON.parse(this.productCart);
     // this.deleteFromCart(3);
   }
+  emptyCart() {
+    localStorage.removeItem('products')
+  }
 
   getCartProduct(id: string, size: string) {
     var productId = JSON.parse(id);
@@ -57,7 +60,7 @@ export class CartComponent implements OnInit {
       }
     });
     
-      localStorage.setItem('products', JSON.stringify(cart_obj));
+    localStorage.setItem('products', JSON.stringify(cart_obj));
     JSON.stringify(cart_obj);
   }
 }

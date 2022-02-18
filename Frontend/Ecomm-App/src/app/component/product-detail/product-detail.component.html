@@ -1,7 +1,6 @@
 <app-side-header header="Product Detail" [breadcrumb]="breadcrumb"></app-side-header>
 <app-alert alertName="{{NewalertName}}" alertDesc="{{NewalerDesc}}"></app-alert>
 <div class="row">
-
   <div class="col-md-6 text-center">
     <!-- <span *ngFor="let items of productDetail.productImages">
     <img src="{{items.image}}" class="img-thumbnail" />
@@ -10,9 +9,10 @@
   <div class="col-md-6">
     <h3> Name: {{productDetail.name}}</h3>
     <h4> Product Id: {{productDetail.productId}} </h4>
-    <h4> Product Id: {{productDetail.userId}} </h4>
+    <h4> User Id: {{productDetail.userId}} </h4>
     <h4> Time : {{productDetail.timestamp}} </h4>
-
+    <h4> Amount :$ {{productDetail.price}}/- </h4>
+    <b>Description:</b>
     <p>{{productDetail.description}}</p>
     <div class="size">
       <ul class="nav">
@@ -21,7 +21,7 @@
         </li>
       </ul>
     </div>
-    <br />
+    <br/>
     <button class="btn btn-info" (click)="cart(productDetail.productId)">Add to cart</button>
   </div>
 
