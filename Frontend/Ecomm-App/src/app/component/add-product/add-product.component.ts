@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { ProductServiceService } from 'src/app/service/product/product-service.service';
 
 @Component({
   selector: 'app-add-product',
@@ -12,21 +14,23 @@ export class AddProductComponent implements OnInit {
     { name: 'Products', url: '/products' },
     { name: 'Add Products', url: '/addProducts' },
   ];
+  constructor(private productServ: ProductServiceService) {}
+
+  ngOnInit(): void {}
 
   productForm = new FormGroup({
-    productName: new FormControl(''),
-    productDesc: new FormControl(''),
-    productAmount: new FormControl(''),
-    amount: new FormControl(''),
+    imagePath: new FormControl(''),
+    name: new FormControl(''),
+    description: new FormControl(''),
+    price: new FormControl(''),
     size: new FormControl(''),
     quantity: new FormControl(''),
     userId: new FormControl(''),
   });
+
   onSubmit() {
-    console.log(this.productForm.value);
+    this.productServ.addProduct(this.productForm.value);
+
+    // console.log(this.productForm.value);
   }
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

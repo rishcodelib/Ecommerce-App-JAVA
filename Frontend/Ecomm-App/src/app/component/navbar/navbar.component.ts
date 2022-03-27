@@ -10,7 +10,9 @@ export class NavbarComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    var cart: any = localStorage.getItem('products');
-    this.cartItems = JSON.parse(cart).length;
+    if (localStorage.getItem('products')) {
+      var cart: any = localStorage.getItem('products');
+      this.cartItems = JSON.parse(cart).length;
+    }
   }
 }

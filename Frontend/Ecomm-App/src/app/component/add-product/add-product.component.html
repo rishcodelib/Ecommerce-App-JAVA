@@ -9,25 +9,23 @@
         <hr />
         <div class="mb-3 mt-3">
           <label for="formFile" class="form-label">Upload Image</label>
-          <input class="form-control" type="file" id="formFile">
+          <input class="form-control" type="file" id="formFile" formControlName="imagePath">
         </div>
         <div class="mb-3 mt-3">
           <label for="pName">Product Name:</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter pName" name="name"
-            formControlName="productName">
+          <input type="text" class="form-control" id="name" placeholder="Enter pName" name="name"            formControlName="name">
 
         </div>
         <div class="mb-3 mt-3">
           <label for="description">Product Description:</label>
-          <input type="text" class="form-control" id="description" formControlName="productDesc"
+          <input type="text" class="form-control" id="description" formControlName="description"
             placeholder="Enter description" name="description">
         </div>
         <div class="row">
           <div class="col-md-12">
             <div class="mb-3 mt-3">
-              <label for="description">Product Amount:</label>
-              <input type="number" class="form-control" formControlName="amount" id="description"
-                placeholder="Enter Amount" name="description">
+              <label for="amount">Product Amount:</label>
+              <input type="number" class="form-control" formControlName="price" id="amount" placeholder="Enter Amount" name="amount">
             </div>
           </div>
           <div class="col-md-6">
