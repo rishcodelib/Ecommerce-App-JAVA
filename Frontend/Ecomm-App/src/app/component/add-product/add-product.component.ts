@@ -25,7 +25,7 @@ export class AddProductComponent implements OnInit {
     price: new FormControl(''),
     size: new FormControl(''),
     quantity: new FormControl(''),
-    userId: new FormControl(''),
+    UserId: new FormControl(''),
   });
 
   onSubmit() {

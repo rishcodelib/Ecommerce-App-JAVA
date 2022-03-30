@@ -12,7 +12,7 @@
       data-bs-parent="#accordionExample">
       <div class="accordion-body">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-3">
             <app-item-card></app-item-card>>
           </div>
           <div class="col-md-8">
@@ -37,9 +37,10 @@
       <div class="accordion-body">
         <div class="row">
           <div class="col-md-8">
-            <p>Address: {{address}} </p>
-            <p>State: {{state}}</p>
-            <p>City: {{city}}</p>
+            <p><b>Customer Name:</b>{{custName}}</p>
+            <p><b>Customer Contact:</b>{{custContact}}</p>
+            <p><b>Address:</b> {{custAddress}} </p>
+
           </div>
         </div>
       </div>
@@ -56,18 +57,25 @@
     <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree"
       data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <h4> Amount Payable : $400</h4>
-        <h6> Discounted Amount : $100</h6>
-        <h6> Available Balance : $1500</h6>
+        <h4> Amount Payable :</h4>
+        <h6> Discounted Amount : </h6>
+        <h6> Available Balance : </h6>
       </div>
     </div>
   </div>
 </div>
 <hr />
 <div class="row">
-  <div class="col-md-12 text-center ">
+  <div class="col-md-6 text-center ">
+    <button class="btn btn-danger">
+      Reject & Empty Cart
+    </button>
+   
+  </div>
+  <div class="col-md-6 text-center ">
     <button class="btn btn-success">
       Confirm & Place Order
     </button>
+   
   </div>
 </div>

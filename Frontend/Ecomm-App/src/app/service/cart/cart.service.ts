@@ -15,6 +15,7 @@ export class CartService {
       return res;
     });
   }
+  
 
   deleteFromCart(id: number) {
     var cart: any = localStorage.getItem('products');
@@ -35,4 +36,5 @@ export class CartService {
   emptyCart() {
     localStorage.removeItem('products')
   }
+
 }
