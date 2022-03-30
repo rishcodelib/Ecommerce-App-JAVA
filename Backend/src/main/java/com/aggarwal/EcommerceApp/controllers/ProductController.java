@@ -1,6 +1,10 @@
 package com.aggarwal.EcommerceApp.controllers;
 
+
+
 import java.util.List;
+
+import javax.xml.bind.annotation.XmlMimeType;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -11,12 +15,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.aggarwal.EcommerceApp.Service.IProductservice;
 import com.aggarwal.EcommerceApp.entity.Product;
+
 @CrossOrigin
 @RestController
+
 public class ProductController {
 
 	@Autowired
@@ -32,8 +40,10 @@ public class ProductController {
 		return myprod.getProduct(ProductId);
 	}
 
-	@PostMapping("/product")
+	@PostMapping(value ="/product")
+	
 	public void addProduct(@RequestBody Product prod) {
+		System.out.println(prod);
 		try {
 			myprod.addProduct(prod);
 		} catch (DataIntegrityViolationException e) {

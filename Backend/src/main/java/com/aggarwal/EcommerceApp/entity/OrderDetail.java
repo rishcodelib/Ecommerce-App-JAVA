@@ -19,11 +19,14 @@ public class OrderDetail {
 	private int orderId;
 
 	@OneToOne
-	@JoinColumn(name ="productId")
+	@JoinColumn(name = "productId")
 	private Product productId;
 
 	@Column(name = "orderQuantity", nullable = true)
 	private int orderQuantity;
+
+	@Column(name = "orderAmount", nullable = true)
+	private int orderAmount;
 
 	@Column(name = "courierName", nullable = true)
 	private String courierName;
@@ -43,21 +46,26 @@ public class OrderDetail {
 		// TODO Auto-generated constructor stub
 	}
 
-
-
-	public OrderDetail(int orderId, Product productId, int orderQuantity, String courierName, String courierNumber,
-			int orderStatus, User userId) {
+	public OrderDetail(int orderId, Product productId, int orderQuantity, int orderAmount, String courierName,
+			String courierNumber, int orderStatus, User userId) {
 		super();
 		this.orderId = orderId;
 		this.productId = productId;
 		this.orderQuantity = orderQuantity;
+		this.orderAmount = orderAmount;
 		this.courierName = courierName;
 		this.courierNumber = courierNumber;
 		this.orderStatus = orderStatus;
 		this.userId = userId;
 	}
 
+	public int getOrderAmount() {
+		return orderAmount;
+	}
 
+	public void setOrderAmount(int orderAmount) {
+		this.orderAmount = orderAmount;
+	}
 
 	public int getOrderId() {
 		return orderId;
@@ -114,6 +122,5 @@ public class OrderDetail {
 	public void setUserId(User userId) {
 		this.userId = userId;
 	}
-
 
 }

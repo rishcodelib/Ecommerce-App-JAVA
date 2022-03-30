@@ -23,12 +23,12 @@ public class UserController {
 
 	@Autowired
 	private IUserService myuser;
-	
+
 	@GetMapping("/")
 	public String homepage() {
 		return "I am Working";
 	}
-	
+
 	@GetMapping("/user")
 	public List<User> GetAllUsers() {
 		return myuser.getAllUser();
@@ -42,7 +42,7 @@ public class UserController {
 
 	@PostMapping("/user/signin")
 	public Boolean signin(@RequestParam("email") String email, @RequestParam("password") String password) {
-		
+
 		return myuser.login(email, password);
 
 	}
@@ -50,7 +50,7 @@ public class UserController {
 	@PostMapping("/user")
 	@ResponseBody
 	public void addUser(@RequestBody User user) {
-		
+
 		myuser.addUser(user);
 
 	}
